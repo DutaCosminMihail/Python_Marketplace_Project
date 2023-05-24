@@ -1,0 +1,18 @@
+Student: Duta Mihail Cosmin
+Grupa/Seria: 331CC
+Timp total alocat: ~20h 
+
+Tema 1 ASC: Marketplace (MPMC)
+
+Modulul Marketplace contine mai multe metode care gestioneaza 
+interactiunea dintre producatori si consumatori. 
+Producatorii se pot inregistra apeland metoda register_producer() care returneaza un ID unic pentru fiecare producator. 
+Producatorii isi pot publica produsele in marketplace apelandmetoda de publicare, adaugand astfel produsul.
+Consumatorii pot adauga produse in cosul lor apeland add_to_cart. Daca un consumator incearca sa adauge un produs care nu este disponibil, va primi False (returnandu-se False) si va trebui sa incerce din nou peste un anumit timp. 
+
+Threadurile din modulul Producer au rolul de a crea un producator, iar acesta are sarcina de a crea produse si de a 
+le publica permanent in marketplace. Daca are loc in marketplace, producatorul asteapta un timp predefinit de producere a produsului, iar daca nu are loc acesta va incerca dupa un timp primit ca input. 
+
+Threadurile din modulul Consumer au rolul de a crea cosul de cumparaturi din care se pot scoate produse (remove from cart) sau se pot adauga (add to cart), iar la final exista posibilitatea sa se "plaseze comanda". 
+In cazul in care functionalitatile de adaugare/stergere a produselor in/din cosul de cumparaturi nu pot fi efectuate => se asteapta un timp dat ca input.
+Pe tot parcursul codului (producer/consumer/marketplace/testmarketplace) folosesc block-uri de sincronizare si try-finally pentru a asigura corectitudinea codului si calitatea de thread-protected/thread-safety.
